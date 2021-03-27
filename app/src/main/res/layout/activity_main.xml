@@ -25,6 +25,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWelcomeRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -33,10 +34,11 @@
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="45dp"
-        android:id="@+id/btnyeni"
+
         ></androidx.appcompat.widget.AppCompatButton>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWelcomeLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/darkred_200"
@@ -45,7 +47,7 @@
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="105dp"
-        android:id="@+id/btnhesap"
+
         ></androidx.appcompat.widget.AppCompatButton>
 
 
