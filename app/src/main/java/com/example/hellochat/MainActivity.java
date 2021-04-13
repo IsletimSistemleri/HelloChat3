@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-        private Button btnWelcomeLogin,btnWelcomeRegister;
+        private Button btnLogin,btnRegister;
 
         public  void  init(){
-            btnWelcomeLogin = (Button) findViewById(R.id.btnWelcomeLogin);
-            btnWelcomeRegister = (Button) findViewById(R.id.btnWelcomeRegister);
+            btnLogin = (Button) findViewById(R.id.btnWelcomeLogin);
+            btnRegister = (Button) findViewById(R.id.btnWelcomeRegister);
 
         }
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
        init();
 
-       btnWelcomeLogin.setOnClickListener(new View.OnClickListener() {
+       btnLogin.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-        btnWelcomeRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentRegister = new Intent(MainActivity.this, RegisterActivity.class);

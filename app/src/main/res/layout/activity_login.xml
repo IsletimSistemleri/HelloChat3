@@ -6,12 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGIN EKRANI"
-        android:textSize="35sp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+    <include layout="@layout/action_bar"
+        android:id="@+id/action_bar_Login"></include>
 
 </RelativeLayout>
