@@ -1,12 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    >
 
     <include layout="@layout/action_bar"
         android:id="@+id/action_bar_Login"></include>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="65dp"
+            android:hint="Username"
+            android:paddingLeft="15dp"
+            android:inputType="textEmailAddress"
+            >
+
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="8dp"
+            android:hint="Password"
+            android:paddingLeft="15dp"
+            android:inputType="textPassword"
+            >
+
+        </EditText>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonLogin"
+            android:layout_marginTop="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textAllCaps="false"
+            android:text="Login"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:background="@color/mavi_200"
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
