@@ -1,0 +1,61 @@
+{
+  "project_info": {
+<<<<<<< Updated upstream
+    "project_number": "446755751517",
+    "project_id": "hellom-7b542",
+    "storage_bucket": "hellom-7b542.appspot.com"
+=======
+    "project_number": "154182757317",
+    "project_id": "hello-2594e",
+    "storage_bucket": "hello-2594e.appspot.com"
+>>>>>>> Stashed changes
+  },
+  "client": [
+    {
+      "client_info": {
+<<<<<<< Updated upstream
+        "mobilesdk_app_id": "1:446755751517:android:80a1625de2ffe02d57efb4",
+=======
+        "mobilesdk_app_id": "1:154182757317:android:42b086bea25864543779ac",
+>>>>>>> Stashed changes
+        "android_client_info": {
+          "package_name": "com.example.hellochat"
+        }
+      },
+      "oauth_client": [
+        {
+<<<<<<< Updated upstream
+          "client_id": "446755751517-ebmqr4930ahhl1klb1p26c446u12ar5g.apps.googleusercontent.com",
+=======
+          "client_id": "154182757317-ddpbh2u8gamisgmvhbrfprgv2n1h5hht.apps.googleusercontent.com",
+>>>>>>> Stashed changes
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+<<<<<<< Updated upstream
+          "current_key": "AIzaSyCL4a6-PFsYhItYmnEOQ2q4IAC_XhPJ4Cw"
+=======
+          "current_key": "AIzaSyDs-QgLCwoi8t9fFFWhzW3QMTTzReBXM7A"
+>>>>>>> Stashed changes
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+<<<<<<< Updated upstream
+              "client_id": "446755751517-ebmqr4930ahhl1klb1p26c446u12ar5g.apps.googleusercontent.com",
+=======
+              "client_id": "154182757317-ddpbh2u8gamisgmvhbrfprgv2n1h5hht.apps.googleusercontent.com",
+>>>>>>> Stashed changes
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
