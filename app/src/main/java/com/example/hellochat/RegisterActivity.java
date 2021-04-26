@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
@@ -28,8 +29,6 @@ DatabaseReference reference;
 AppCompatButton btnSave;
 FirebaseAuth mAuth;
 FirebaseUser fUser;
-
-
     ProgressBar mProgressBar;
     EditText edtNameSurename,edtPhone,edtEmail,edtPassword,edtPasswordRetry;
 
@@ -112,15 +111,16 @@ FirebaseUser fUser;
 
 
     }
+
     public void register(String nameSurname,String phone, String email, String password) {
     mProgressBar.setVisibility(View.VISIBLE);
-mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
         if(task.isSuccessful()){
             fUser=mAuth.getCurrentUser();
             String uid=fUser.getUid();
-            //  reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+             reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
             HashMap<String, String> mMap=  new HashMap<>();
             mMap.put("id",uid);
             mMap.put("name_surname",nameSurname);

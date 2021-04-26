@@ -15,12 +15,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
    Context context=this;
     EditText editTextUsername,editTextPassword;
 
     FirebaseAuth mAuth;
+    FirebaseUser mUser;
 
     @Override
 
@@ -30,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         editTextUsername=findViewById(R.id.editTextUsername);
         editTextPassword=findViewById(R.id.editTextPassword);
+        mUser=mAuth.getCurrentUser();
     }
     public  void login(View view){
         String username=editTextUsername.getText().toString().trim();
@@ -51,12 +54,13 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //geriye task değeri dönecek
+
 
                 if(task.isSuccessful()){
-Intent intent=new Intent(context,MessageActivity.class);
-startActivity(intent);
-finish();
+                    Intent intent=new Intent(context,MainActivity.class);
+                    intent.putExtra("uid",mUser.getUid());
+                    startActivity(intent);
+
 
                 }else{
 

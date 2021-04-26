@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.hellochat.Adapters.ViewPagerAdapters;
 import com.example.hellochat.Fragments.MessagesFragment;
+import com.example.hellochat.Fragments.ProfileFragment;
 import com.example.hellochat.Fragments.UsersFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -25,6 +26,7 @@ TabLayout tabLayout;
         viewPagerAdapters=new ViewPagerAdapters(getSupportFragmentManager());
         viewPagerAdapters.addFragment(new UsersFragment(),"USERS");
         viewPagerAdapters.addFragment(new MessagesFragment(),"MESSAGE");
+        viewPagerAdapters.addFragment(new ProfileFragment(),"PROFİLE");
         viewPager.setAdapter(viewPagerAdapters);
         tabLayout.setupWithViewPager(viewPager);
 

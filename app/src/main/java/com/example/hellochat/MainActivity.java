@@ -2,41 +2,56 @@ package com.example.hellochat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
-        private Button btnLogin,btnRegister;
 
-        public  void  init(){
-            btnLogin = (Button) findViewById(R.id.btnWelcomeLogin);
-            btnRegister = (Button) findViewById(R.id.btnWelcomeRegister);
+FirebaseUser firebaseUser;
+FirebaseAuth auth;
+Context context=this;
 
-        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       init();
-
-       btnLogin.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
-               startActivity(intentLogin);
-           }
-       });
-
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentRegister = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intentRegister);
-            }
-        });
+       auth=FirebaseAuth.getInstance();
+       firebaseUser=auth.getCurrentUser();
 
     }
+    public  void login(View view){
+        Intent intent=new Intent(context,LoginActivity.class);
+
+        /*
+        //Z=Kontrol et burayı
+       intent.putExtra("uid",firebaseUser.getUid());
+      finish();
+*/
+        startActivity(intent);
+    }
+    public void register(View v){
+
+        Intent intent =  new Intent(context,RegisterActivity.class);
+        startActivity(intent);
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(firebaseUser !=null) {
+            Intent intent = new Intent(context, MessageActivity.class);
+            intent.putExtra("uid", firebaseUser.getUid());
+            startActivity(intent);
+        }
+
+    }
+
 }
